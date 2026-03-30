@@ -1,17 +1,25 @@
+import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
+import DashboardPage from './pages/DashboardPage.jsx'
+import LoginPage from './pages/LoginPage.jsx'
+import RegisterPage from './pages/RegisterPage.jsx'
+import ProtectedRoute from './routes/ProtectedRoute.jsx'
+import PublicRoute from './routes/PublicRoute.jsx'
 
 function App() {
   return (
-    <main className="app-shell">
-      <div className="hero-copy">
-        <p className="eyebrow">Worklane</p>
-        <h1>Team project management, built with a production mindset.</h1>
-        <p className="description">
-          This workspace will evolve into a full-stack SaaS application for
-          managing teams, projects, tasks, and collaboration.
-        </p>
-      </div>
-    </main>
+    <Routes>
+      <Route element={<ProtectedRoute />}>
+        <Route path='/' element={<DashboardPage />} />
+      </Route>
+
+      <Route element={<PublicRoute />}>
+        <Route path='/login' element={<LoginPage />} />
+        <Route path='/register' element={<RegisterPage />} />
+      </Route>
+
+      <Route path='*' element={<Navigate to='/' replace />} />
+    </Routes>
   )
 }
 

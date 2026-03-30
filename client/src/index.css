@@ -1,11 +1,9 @@
 :root {
-  font-family: Inter, 'Segoe UI', sans-serif;
+  font-family: Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #0f172a;
-  background:
-    radial-gradient(circle at top, rgba(251, 113, 133, 0.18), transparent 32%),
-    linear-gradient(180deg, #fff7ed 0%, #ffffff 42%, #fff1f2 100%);
+  color: #111827;
+  background-color: #f3f4f6;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -34,5 +32,5 @@ select {
 }
 
 a {
-  color: inherit;
+  color: #2563eb;
 }
